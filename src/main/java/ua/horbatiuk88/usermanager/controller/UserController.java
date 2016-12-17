@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import ua.horbatiuk88.usermanager.model.User;
 import ua.horbatiuk88.usermanager.service.UserService;
 
@@ -38,10 +35,11 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @RequestMapping(value = "/user/edit", method = RequestMethod.GET)
-    public String edit(Model model) {
+    @RequestMapping(value = "/user/edit/{id}", method = RequestMethod.GET)
+    public String edit(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", this.userService.getById(id));
 
-        return "redirect:/editForm";
+        return "editForm";
     }
 
     @RequestMapping(value = "/user/save", method = RequestMethod.POST)
