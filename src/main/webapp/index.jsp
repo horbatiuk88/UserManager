@@ -39,14 +39,17 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <div align="center" class="img-wrapper">
-            <img width="50%" src="http://www.publicdomainpictures.net/pictures/50000/velka/computer-silhouette.jpg" class="img-responsive" alt="User Manager">
-            <div class="img-overlay">
-                <button style="height: 260px; width: 370px; border-radius: 10%" class="btn btn-md btn-success" onclick="window.location.href='${pageContext.request.contextPath}/users/1'">
-                    <span style="color: darkorange"><strong><h3>Horbatiuk88 presents</h3><br> <h4>CRUD WEB APPLICATION</h4><br>USER MANAGER V1</strong></span></button>
-            </div>
+<div class="container">
+    <div align="center" class="img-wrapper">
+        <img width="50%" src="http://www.publicdomainpictures.net/pictures/50000/velka/computer-silhouette.jpg"
+             class="img-responsive" alt="User Manager">
+        <div class="img-overlay">
+            <button style="height: 260px; width: 370px; border-radius: 10%" class="btn btn-md btn-success"
+                    onclick="window.location.href='${pageContext.request.contextPath}/users/1'">
+                <span style="color: darkorange"><strong><h3>Horbatiuk88 presents</h3><br> <h4>CRUD WEB APPLICATION</h4><br>USER MANAGER V1</strong></span>
+            </button>
         </div>
     </div>
+</div>
 </body>
 </html>

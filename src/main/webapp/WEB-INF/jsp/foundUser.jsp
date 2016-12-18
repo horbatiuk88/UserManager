@@ -18,7 +18,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 align="center">Edit User ${user.name}</h1>
+<h1 align="center">Found users with name ${foundUsers[0].name}</h1>
 <div class="container">
     <div class="container">
         <table class="table table-bordered">
@@ -32,21 +32,21 @@
             </tr>
             </thead>
             <tbody>
-                    <tr class="text-center">
-                        <td>${user.id}</td>
-                        <td>${user.name}</td>
-                        <td>${user.age}</td>
-                        <td>${user.admin}</td>
-                        <td>${fn:substringBefore(user.createdDate, ".")}</td>
-                    </tr>
+            <c:forEach items="${foundUsers}" var="user">
+                <tr class="text-center">
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.age}</td>
+                    <td>${user.admin}</td>
+                    <td>${fn:substringBefore(user.createdDate, ".")}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </div>
-<div>
-    <form action="${pageContext.request.contextPath}/users/1" method="get">
-        <button class="btn btn-link" type="submit">Back</button>
-    </form>
-</div>
+    <button class="btn btn-link" onclick="window.location.href='${pageContext.request.contextPath}/users/1'">Back to
+        user list
+    </button>
 </div>
 </body>
 </html>

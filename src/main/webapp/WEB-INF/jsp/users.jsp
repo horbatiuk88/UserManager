@@ -103,7 +103,8 @@
                       method="post">
                     <div class="form-group">
                         <label for="name-line">NAME: </label>
-                        <input class="form-control" name="name" type="text" title="enter at least 2 symbols" required="required"
+                        <input class="form-control" name="name" type="text" title="enter at least 2 symbols"
+                               required="required"
                                id="name-line">
                     </div>
                     <div class="form-group">
@@ -128,7 +129,8 @@
                       method="get">
                     <div class="form-group">
                         <label for="search-line">NAME: </label>
-                        <input class="form-control" name="name" type="text" title="enter at least 2 symbols" required="required"
+                        <input class="form-control" name="name" type="text" title="enter at least 2 symbols"
+                               required="required"
                                id="search-line">
                     </div>
                     <button class="btn btn-success" type="submit"><strong>Search</strong></button>

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import ua.horbatiuk88.usermanager.model.User;
 import ua.horbatiuk88.usermanager.service.UserService;
 
+import java.util.List;
+
 @Controller
 public class UserController {
 
@@ -64,12 +66,12 @@ public class UserController {
 
     @RequestMapping(value = "/user/findUser", method = RequestMethod.GET)
     public String getByName(@RequestParam("name") String name, Model model) {
-        User foundUser = this.userService.getByName(name);
-        if (foundUser == null) {
+        List<User> foundUsers = this.userService.getByName(name);
+        if (foundUsers.isEmpty()) {
             model.addAttribute("name", name);
             return "noFoundUser";
         }
-        model.addAttribute("user", foundUser);
+        model.addAttribute("foundUsers", foundUsers);
 
         return "foundUser";
     }

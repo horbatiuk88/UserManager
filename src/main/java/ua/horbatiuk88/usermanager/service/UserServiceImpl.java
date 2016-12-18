@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.horbatiuk88.usermanager.model.User;
 import ua.horbatiuk88.usermanager.repository.UserRepository;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
@@ -28,7 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getByName(String name) {
+    public List<User> getByName(String name) {
         LOG.debug("getting user from repo with name {}", name);
         return this.userRepository.getByName(name);
     }
