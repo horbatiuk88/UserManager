@@ -19,7 +19,7 @@
 <body>
 <h1 align="center">Edit User ${user.name}</h1>
 <div class="container">
-    <form action="${pageContext.request.contextPath}/user/save" method="post">
+    <form action="${pageContext.request.contextPath}/user/save/${pageNumber}" method="post">
         <div class="form-group">
             <label for="id-line">ID: </label>
             <input class="form-control" name="id" type="number" readonly="readonly" value="${user.id}" id="id-line">
@@ -46,7 +46,7 @@
     </form>
 </div>
 <div>
-    <form action="${pageContext.request.contextPath}/users" method="get">
+    <form action="${pageContext.request.contextPath}/users/${pageNumber}" method="get">
         <button class="btn btn-link" type="submit">Back</button>
     </form>
 </div>

@@ -3,16 +3,18 @@ package ua.horbatiuk88.usermanager.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ua.horbatiuk88.usermanager.model.User;
 import ua.horbatiuk88.usermanager.repository.UserRepository;
 
-import java.util.List;
-
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
+    private static final int PAGE_SIZE = 10;
 
     private static final Logger LOG = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -32,9 +34,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAll() {
+    public Page<User> getAll(int pageNumber) {
+        PageRequest pageRequest = new PageRequest(pageNumber - 1, 10, Sort.Direction.ASC, "id");
         LOG.debug("getting all users from repo");
-        return this.userRepository.findAll();
+        return this.userRepository.findAll(pageRequest);
     }
 
     @Override
