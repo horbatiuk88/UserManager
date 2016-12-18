@@ -30,12 +30,12 @@ public class UserController {
         int begin = Math.max(1, current - 5);
         int end = Math.min(begin + 10, page.getTotalPages());
 
+        LOG.debug("successfully loaded all users");
+
         model.addAttribute("userList", page);
         model.addAttribute("beginIndex", begin);
         model.addAttribute("endIndex", end);
         model.addAttribute("currentIndex", current);
-
-        LOG.debug("successfully loaded all users");
 
         return "users";
     }
@@ -43,7 +43,8 @@ public class UserController {
     @RequestMapping(value = "/user/delete/{id}/{pageNumber}")
     public String delete(@PathVariable("id") int id, @PathVariable("pageNumber") Integer pageNumber) {
         this.userService.delete(id);
-        LOG.debug("successfully delete user with id {}", id);
+
+        LOG.debug("successfully removed user with id {}", id);
 
         return "redirect:/users/" + pageNumber;
     }
@@ -51,7 +52,10 @@ public class UserController {
     @RequestMapping(value = "/user/edit/{id}/{pageNumber}", method = RequestMethod.GET)
     public String edit(@PathVariable("id") int id, @PathVariable("pageNumber") Integer pageNumber, Model model) {
         model.addAttribute("user", this.userService.getById(id));
+
         model.addAttribute("pageNumber", pageNumber);
+
+        LOG.info("loading user to edit page...");
 
         return "editForm";
     }
@@ -59,7 +63,7 @@ public class UserController {
     @RequestMapping(value = "/user/save/{pageNumber}", method = RequestMethod.POST)
     public String save(@PathVariable Integer pageNumber, @ModelAttribute("user") User user) {
         this.userService.save(user);
-        LOG.debug("user successfully saved");
+        LOG.debug("user {} successfully saved", user);
 
         return "redirect:/users/" + pageNumber;
     }
@@ -69,9 +73,11 @@ public class UserController {
         List<User> foundUsers = this.userService.getByName(name);
         if (foundUsers.isEmpty()) {
             model.addAttribute("name", name);
+            LOG.debug("no user with name {}", name);
             return "noFoundUser";
         }
         model.addAttribute("foundUsers", foundUsers);
+        LOG.debug("users with name {} were successfully found", name);
 
         return "foundUser";
     }

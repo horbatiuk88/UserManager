@@ -1,0 +1,16 @@
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('1', 'Kirill', '28', '1', '2016-01-19 03:14:07.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('2', 'Albina', '29', '1', '2016-01-19 03:14:08.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('3', 'Artem', '25', '0', '2016-01-19 03:14:09.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('4', 'Denis', '20', '0', '2016-01-19 03:14:10.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('5', 'Galya', '21', '0', '2016-01-19 03:14:11.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('6', 'Anna', '19', '0', '2016-01-19 03:14:12.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('7', 'Bella', '30', '0', '2016-01-19 03:14:13.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('8', 'John', '18', '0', '2016-01-19 03:14:14.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('9', 'Elena', '22', '0', '2016-01-19 03:14:15.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('10', 'Andrey', '24', '0', '2016-01-19 03:14:16.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('11', 'Anna', '24', '0', '2016-01-19 03:14:17.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('12', 'Fill', '22', '0', '2016-01-19 03:14:18.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('13', 'Galya', '42', '0', '2016-01-19 03:14:19.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('14', 'Timur', '33', '0', '2016-01-19 03:14:20.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('15', 'Anton', '31', '0', '2016-01-19 03:14:21.0');
+INSERT INTO `test`.`users` (`id`, `name`, `age`, `admin`, `createdDate`) VALUES ('16', 'Denis', '29', '0', '2016-01-19 03:14:22.0');
